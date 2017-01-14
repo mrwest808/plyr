@@ -3090,32 +3090,32 @@
             }
 
             // Adjust volume on scroll
-            _on(plyr.volume.input, 'wheel', function(event) {
-                event.preventDefault();
-
-                // Detect "natural" scroll - suppored on OS X Safari only
-                // Other browsers on OS X will be inverted until support improves
-                var inverted = event.webkitDirectionInvertedFromDevice,
-                    step = (config.volumeStep / 5);
-
-                // Scroll down (or up on natural) to decrease
-                if (event.deltaY < 0 || event.deltaX > 0) {
-                    if (inverted) {
-                        _decreaseVolume(step);
-                    } else {
-                        _increaseVolume(step);
-                    }
-                }
-
-                // Scroll up (or down on natural) to increase
-                if (event.deltaY > 0 || event.deltaX < 0) {
-                    if (inverted) {
-                        _increaseVolume(step);
-                    } else {
-                        _decreaseVolume(step);
-                    }
-                }
-            });
+            // _on(plyr.volume.input, 'wheel', function(event) {
+            //     event.preventDefault();
+            //
+            //     // Detect "natural" scroll - suppored on OS X Safari only
+            //     // Other browsers on OS X will be inverted until support improves
+            //     var inverted = event.webkitDirectionInvertedFromDevice,
+            //         step = (config.volumeStep / 5);
+            //
+            //     // Scroll down (or up on natural) to decrease
+            //     if (event.deltaY < 0 || event.deltaX > 0) {
+            //         if (inverted) {
+            //             _decreaseVolume(step);
+            //         } else {
+            //             _increaseVolume(step);
+            //         }
+            //     }
+            //
+            //     // Scroll up (or down on natural) to increase
+            //     if (event.deltaY > 0 || event.deltaX < 0) {
+            //         if (inverted) {
+            //             _increaseVolume(step);
+            //         } else {
+            //             _decreaseVolume(step);
+            //         }
+            //     }
+            // });
         }
 
         // Listen for media events
